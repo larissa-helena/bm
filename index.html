@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://apis.google.com/js/api.js"></script>
+	<title>Cadastro de clientes</title>
+	<link rel="icon" href="favicon.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+	<header>
+		<div class="caixa">
+			<img class="logo" src="logo.png">
+			<!---nav>
+				<button class="lojometro"><a href="lojometro.html">Lojômetro</a></button>
+				<button class="pesquisa"><a href="pesquisa.html">Pesquisa</a> </button>
+			</nav--->
+		</div>
+	</header>
+
+	<h1 class="titulo-principal">Cadastro de clientes</h1>
+	<form name="submit-to-google-sheet" id="form-vendas">
+		<div class="infos">
+			<label for="cnpj">CNPJ:</label>
+			<input type="text" name="CNPJ" id="cnpj" name="cnpj" minlength="14" maxlength="14" pattern="\d{14}" required><br><br>
+
+			<label for="razao-social">Razão Social:</label>
+			<input type="text" name="Razão social " id="razaoSocial" name="razao-social"><br><br>
+
+			<label for="nome-responsavel">Nome do Responsável:</label>
+			<input type="text" name="Nome do Responsável" id="nomeResponsavel" name="nome-responsavel"><br><br>
+
+			<label for="marca">Marca:</label>
+			<input type="text" name="MARCA" id="marca" name="marca"><br><br>
+		</div>
+
+		<div class="localizacao">
+			<label for="cidade">Cidade:</label>
+			<input type="text" name="CIDADE" id="cidade" name="cidade"><br><br>
+
+			<label for="uf">UF:</label>
+			<input type="text" name="UF" id="uf" pattern="[A-Za-z]{2}" name="uf"><br><br>
+
+			<label for="cep">CEP:</label>
+			<input type="text" name="cep" id="cep" pattern="\d{8}" minlength="8" required><br><br>
+
+			<label for="op">OP:</label>
+			<input type="text" name="OP" id="op" name="op" pattern="\d{6}" minlength="6" required><br><br>
+
+
+
+			<label for="plataforma">Plataforma:</label>
+			<select id="plataforma" name="PLATAFORMA">
+				<option value="">-</option>
+				<option value="BIG FULL">BIG FULL</option>
+				<option value="BIG START">BIG START</option>
+				<option value="LINX WAY">LINX WAY</option>
+				<option value="FARMA CLOUD">FARMA CLOUD</option>
+			</select><br><br>
+		</div>
+
+		<div class="produto">
+			<label for="produto">Produto:</label>
+			<select id="produto" name="PRODUTO">
+				<option value="">-</option>
+				<option value="LFC">LFC</option>
+				<option value="SOFTPHARMA">SOFTPHARMA</option>
+				<option value="IMENDES">IMENDES</option>
+				<option value="SILO">SILO</option>
+				<option value="NFE">NFE</option>
+				<option value="SERV FILIAL">SERV FILIAL</option>
+				<option value="SERV CENTRAL">SERV CENTRAL</option>
+				<option value="SPED">SPED</option>
+				<option value="TEF">TEF</option>
+				<option value="CONCILIADOR">CONCILIADOR</option>
+				<option value="QR">QR</option>
+				<option value="HUMANUS">HUMANUS</option>
+				<option value="LGPDATA">LGPDATA</option>
+				<option value="PEC">PEC</option>
+				<option value="IFOOD">IFOOD</option>
+				<option value="Term. Adicional">Term. Adicional</option>
+				<option value="NOTEBOOK">NOTEBOOK</option>
+				<option value="PROMO">PROMO</option>
+				<option value="ECOMMERCE">ECOMMERCE</option>
+				<option value="BIG FULL">BIG FULL</option>
+				<option value="BIG START">BIG START</option>
+				<option value="LINX WAY">LINX WAY</option>
+				<option value="FARMA CLOUD">FARMA CLOUD</option>
+			</select><br><br>
+
+
+			<label for="valor-total">Valor Total:</label>
+			<input type="number" id="valor" name="Valor TOTAL" min="0" max="9999" step="0.01" required
+				placeholder="R$ 0,00"><br><br>
+
+			<label for="quantidade">Quantidade:</label>
+			<input type="text" id="quantidade" name="QUANTIDADE"><br><br>
+
+			<label for="adquirente">Adquirente:</label>
+			<select id="adquirente" name="ADQUIRENTE">
+				<option value="">Selecione uma opção</option>
+				<option value="STONE">STONE</option>
+				<option value="CIELO">CIELO</option>
+				<option value="REDE">REDE</option>
+				<option value="GETNET">GETNET</option>
+				<option value="SAFRA">SAFRA</option>
+			</select><br><br>
+		</div>
+
+		<div class="datastatus">
+			<label for="status">Status:</label>
+			<select id="status" name="STATUS">
+				<option value="">Selecione uma opção</option>
+				<option value="BACKLOG">BACKLOG</option>
+				<option value="ATIVO">ATIVO</option>
+				<option value="CANCELADO">CANCELADO</option>
+				<option value="SOMENTE PEC">SOMENTE PEC</option>
+				<option value="SOMENTE TEF">SOMENTE TEF</option>
+				<option value="TRANSFERIDO">TRANSFERIDO</option>
+			</select><br><br>
+
+			<label for="data-venda">Data da Venda:</label>
+			<input type="date" id="dataDeVenda" name="Data de venda"><br><br>
+		</div>
+	</form>
+
+	<div class="button-container">
+		<button type="submit" class="send" id="submit-btn" href="#" role="button">
+			<span>Cadastrar</span>
+			<div class="icon"></div>
+		</button>
+
+		<button class="add" href="#" role="button" onclick="limparCampos()">
+			<span>Adicionar produtos</span>
+			<div class="icon2"><img src="add.png" style="width: 25px;"></div>
+		</button>
+
+		<button class="clean" href="#" role="button" onclick="limparTodosCampos()">
+			<span>Limpar</span>
+			<div class="icon3"><img src="clean.png" style="width: 25px;"></div>
+		</button>
+	</div>
+
+	<script>
+
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbxJUmi3LLI0xjtKQNZ-sOP2QdNT01KgwUm4bIrRD2sBfBmJ1LhitxjHTjCjwSt0K696/exec';
+		const form = document.forms['submit-to-google-sheet'];
+		const submitBtn = document.getElementById('submit-btn');
+
+		submitBtn.addEventListener('click', () => {
+			form.dispatchEvent(new Event('submit'));
+			submitBtn.classList.add('success');
+			submitBtn.removeChild(submitBtn.querySelector('.icon'));
+
+			setTimeout(() => {
+				submitBtn.classList.remove('success');
+				submitBtn.appendChild(createSendIcon());
+			}, 2000);
+		});
+
+		form.addEventListener('submit', e => {
+			e.preventDefault();
+			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+				.then(response => {
+					console.log('Success!', response);
+				})
+				.catch(error => {
+					console.error('Error!', error.message);
+				});
+		});
+
+		function createSendIcon() {
+			const icon = document.createElement('div');
+			icon.classList.add('icon');
+			icon.style.backgroundImage = "url('send.png')";
+
+			return icon;
+		}
+
+
+		function limparCampos() {
+			document.getElementById("cep").value = "";
+			document.getElementById("produto").value = "";
+			document.getElementById("valor").value = "";
+			document.getElementById("quantidade").value = "";
+			document.getElementById("adquirente").value = "";
+			document.getElementById("status").value = "";
+		}
+
+		function limparTodosCampos() {
+			document.getElementById("cnpj").value = "";
+			document.getElementById("razaoSocial").value = "";
+			document.getElementById("nomeResponsavel").value = "";
+			document.getElementById("marca").value = "";
+			document.getElementById("cidade").value = "";
+			document.getElementById("uf").value = "";
+			document.getElementById("cep").value = "";
+			document.getElementById("op").value = "";
+			document.getElementById("plataforma").value = "";
+			document.getElementById("produto").value = "";
+			document.getElementById("valor").value = "";
+			document.getElementById("quantidade").value = "";
+			document.getElementById("adquirente").value = "";
+			document.getElementById("status").value = "";
+			document.getElementById("dataDeVenda").value = "";
+		}
+
+	</script>
+
+	<footer>
+		<h2></h2>
+	</footer>
+</body>
